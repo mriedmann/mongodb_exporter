@@ -1,5 +1,9 @@
 FROM golang:alpine
 
+ENV CGO_ENABLED=0 
+ENV GOOS=linux 
+ENV GOARCH=amd64 
+
 RUN apk add --no-cache git
 RUN go get -u github.com/AlekSi/gocoverutil
 RUN go get -u github.com/prometheus/promu
